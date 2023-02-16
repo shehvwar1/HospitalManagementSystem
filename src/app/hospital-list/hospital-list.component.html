@@ -1,0 +1,54 @@
+<table class="table table-hover text-bold">
+  <thead class="table-light">
+    <tr>
+      <th class="text-center">Hospital Id</th>
+      <th class="text-center">Hospital Name</th>
+      <th class="text-center">Address</th>
+      <th class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hospitals of hospital" class="text-bold">
+      <td class="text-center">{{ hospitals.hospitalId }}</td>
+      <td class="text-center">{{ hospitals.hospitalName }}</td>
+      <td class="text-center">{{ hospitals.address }}</td>
+      <td class="text-center">
+        <button
+          class="btn btn-success"
+          (click)="updateHospitalRecord(hospitals.hospitalId)"
+        >
+          Update
+        </button>
+        <button
+          class="btn btn-danger"
+          style="margin-left: 10px"
+          (click)="deleteHospitalRecord(hospitals.hospitalId)"
+        >
+          Delete
+        </button>
+        <button
+          class="btn btn-info"
+          style="margin-left: 10px"
+          (click)="HospitalDetails(hospitals.hospitalId)"
+        >
+          View
+        </button>
+      </td>
+      <!-- <td>
+        <button
+          (click)="updateHospitalRecord(hospitals.hospitalId)"
+          class="btn btn-info"
+        >
+          Update
+        </button>
+        <button
+          (click)="deleteHospitalRecord(hospitals.hospitalId)"
+          class="btn btn-danger"
+          style="margin-left: 10px"
+        >
+          Delete
+        </button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>

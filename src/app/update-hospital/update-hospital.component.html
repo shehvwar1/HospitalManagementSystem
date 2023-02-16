@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center">Update Hospital</h3>
+      <hr />
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="hospitalId">HospitalId</label>
+            <input
+              type="text"
+              [(ngModel)]="hospital.hospitalId"
+              class="form-control"
+              id="hospitalId"
+              name="hospitalId"
+              placeholder="provide hospital Id"
+              #hospitalId="ngModel"
+              readonly
+            />
+            <!-- <div [hidden]="!hospitalId.pristine" class="alert alert-danger">
+              Hospital Id is required
+            </div> -->
+          </div>
+          <div class="form-group">
+            <label for="hospitalId">HospitalName</label>
+            <input
+              type="text"
+              [(ngModel)]="hospital.hospitalName"
+              class="form-control"
+              id="hospitalName"
+              name="hospitalName"
+              placeholder="provide hospital Name"
+              required
+              #hospitalName="ngModel"
+            />
+            <div [hidden]="!hospitalName.pristine" class="alert alert-danger">
+              Hospital Name is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              [(ngModel)]="hospital.address"
+              class="form-control"
+              id="address"
+              name="address"
+              placeholder="provide hospital Address"
+              required
+              #address="ngModel"
+            />
+            <div [hidden]="!address.pristine" class="alert alert-danger">
+              Hospital Address is required
+            </div>
+          </div>
+          <br />
+          <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
