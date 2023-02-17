@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Hospital } from 'model/hospital';
 import { HospitalServiceService } from 'service/hospital-service.service';
 
@@ -11,7 +11,7 @@ import { HospitalServiceService } from 'service/hospital-service.service';
 export class ViewHospitalDetailComponent implements OnInit{
   hospitalId!:number;
   hospital!: Hospital;
-  constructor(private route: ActivatedRoute, private hospitalService: HospitalServiceService) { }
+  constructor(private route: ActivatedRoute,private router:Router, private hospitalService: HospitalServiceService) { }
   ngOnInit(): void {
     
     this.hospitalId = this.route.snapshot.params['hospitalId'];
@@ -21,5 +21,7 @@ export class ViewHospitalDetailComponent implements OnInit{
       console.log(data)
     });
   }
-
+  list(){
+    this.router.navigate(['getAllHospitalRecords']);
+  }
 }
