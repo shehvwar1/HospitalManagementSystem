@@ -1,0 +1,15 @@
+package com.hospitalmanagemnt.servicesimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hospitalmanagemnt.repositories.DoctorRepository;
+import com.hospitalmanagemnt.services.DoctorService;
+
+@Service
+public class DoctorServiceImpl implements DoctorService{
+	
+	@Autowired
+	DoctorRepository doctorRepository;
+
+}

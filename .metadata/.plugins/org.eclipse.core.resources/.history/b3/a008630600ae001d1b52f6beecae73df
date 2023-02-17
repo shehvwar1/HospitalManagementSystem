@@ -1,0 +1,5 @@
+package com.hospitalmanagemnt.services;
+
+public interface DoctorService {
+
+}

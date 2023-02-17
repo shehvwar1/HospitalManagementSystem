@@ -1,0 +1,5 @@
+package com.hospitalmanagemnt.servicesimpl;
+
+public class DoctorServiceImpl {
+
+}

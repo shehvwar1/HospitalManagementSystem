@@ -1,0 +1,5 @@
+package com.hospitalmanagemnt.dtos;
+
+public class DoctorDto {
+
+}

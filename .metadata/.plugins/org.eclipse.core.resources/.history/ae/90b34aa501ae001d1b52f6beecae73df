@@ -1,0 +1,12 @@
+package com.hospitalmanagemnt.controllers;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hospitalmanagemnt.servicesimpl.DoctorServiceImpl;
+
+@RestController
+public class DoctorController {
+	
+	DoctorServiceImpl doctorServiceImpl;
+
+}

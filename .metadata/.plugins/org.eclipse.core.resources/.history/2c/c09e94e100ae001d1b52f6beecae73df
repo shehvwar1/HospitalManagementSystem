@@ -1,0 +1,60 @@
+package com.hospitalmanagemnt.servicesimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hospitalmanagemnt.dtos.DoctorDto;
+import com.hospitalmanagemnt.entities.Doctor;
+import com.hospitalmanagemnt.repositories.DoctorRepository;
+import com.hospitalmanagemnt.services.DoctorService;
+
+@Service
+public class DoctorServiceImpl implements DoctorService{
+	
+	@Autowired
+	DoctorRepository doctorRepository;
+
+	@Override
+	public Doctor addDoctorRecord(DoctorDto doctordto) {
+		Doctor doctor = Doctor.builder()
+					.doctorId(doctordto.getDoctorId())
+					.doctorName(doctordto.getDoctorName())
+					.contactNumber(doctordto.getContactNumber())
+					.email(doctordto.getEmail())
+					.build();
+		return doctorRepository.save(doctor);
+	}
+
+	@Override
+	public String getDoctorDetailsById(Long doctorId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Doctor> displayAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String updateDoctorRecord(Long doctorId, DoctorDto params) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteDoctorRecordById(Long doctorId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteAllDoctors() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.hospitalmanagemnt.exceptionhandler;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+}

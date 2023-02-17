@@ -1,0 +1,5 @@
+package com.hospitalmanagemnt.exceptionhandler;
+
+public class GlobalExceptionHandler {
+
+}

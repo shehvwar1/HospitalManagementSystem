@@ -1,0 +1,17 @@
+package com.hospitalmanagemnt.dtos;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class DoctorDto {
+	private Long doctorId;
+	private String doctorName;
+	private String contactNumber;
+	private String email;
+}

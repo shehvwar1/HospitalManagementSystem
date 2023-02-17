@@ -1,0 +1,13 @@
+package com.hospitalmanagemnt.dtos;
+
+import javax.persistence.Column;
+
+public class DoctorDto {
+	private Long doctorId;
+	@Column
+	private String doctorName;
+	@Column
+	private String contactNumber;
+	@Column
+	private String email;
+}

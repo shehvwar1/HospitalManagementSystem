@@ -1,0 +1,63 @@
+package com.hospitalmanagemnt.servicesimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hospitalmanagemnt.dtos.DoctorDto;
+import com.hospitalmanagemnt.entities.Doctor;
+import com.hospitalmanagemnt.repositories.DoctorRepository;
+import com.hospitalmanagemnt.services.DoctorService;
+
+@Service
+public class DoctorServiceImpl implements DoctorService{
+	
+	@Autowired
+	DoctorRepository doctorRepository;
+
+	@Override
+	public Doctor addDoctorRecord(DoctorDto doctordto) {
+		Doctor doctor = Doctor.builder()
+					.doctorId(doctordto.getDoctorId())
+					.doctorName(doctordto.getDoctorName())
+					.contactNumber(doctordto.getContactNumber())
+					.email(doctordto.getEmail())
+					.build();
+		return doctorRepository.save(doctor);
+	}
+
+	@Override
+	public Doctor getDoctorDetailsById(Long doctorId) {	
+		return doctorRepository.findById(doctorId).get();
+	}
+
+	@Override
+	public List<Doctor> displayAll() {
+		return doctorRepository.findAll();
+	}
+
+	@Override
+	public String updateDoctorRecord(Long doctorId, DoctorDto params) {
+		Doctor doctor;
+		doctor = doctorRepository.findById(doctorId).get();
+		doctor.setDoctorName(params.getDoctorName());
+		doctor.setContactNumber(params.getContactNumber());
+		doctor.setEmail(params.getEmail());
+		doctorRepository.save(doctor);
+		return "Doctor with Id " + doctorId + " Updated successfully";
+	}
+
+	@Override
+	public String deleteDoctorRecordById(Long doctorId) {
+		doctorRepository.deleteById(doctorId);
+		return "Doctor with id " +  doctorId + " deleted Successfully";
+	}
+
+	@Override
+	public String deleteAllDoctors() {
+		doctorRepository.deleteAll();
+		return "All Doctor Records Deleted successfully";
+	}
+
+}
